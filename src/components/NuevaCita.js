@@ -12,7 +12,7 @@ const stateInicial = {
     error: false
 }
 class NuevaCita extends Component {
-    state = {... stateInicial}
+    state = {...stateInicial}
 
     handleChange = (e) => {
         console.log(e.target.name + ',' + e.target.value);
@@ -136,7 +136,7 @@ class NuevaCita extends Component {
                         <input 
                             type="submit"
                             className="py-3 mt-2 btn btn-success btn-block"
-                            value="Agregar nueva cita" />
+                            value="Agregar nueva cita"/>
                     </form>
                 </div>
             </div>
