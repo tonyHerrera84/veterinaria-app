@@ -8,21 +8,30 @@ class App extends Component {
     citas: []
   }
 
+  // cuando el componente carga
+  componentDidMount() {
+    console.log(this.state.citas)
+    localStorage.setItem('citas', JSON.stringify(this.state.citas));
+  }
+  
   crearNuevaCita = datos => {
     console.log(datos);
     // copiar el state actual
-    const citas = [...this.state.citas, datos];
-
+    let citas = [...this.state.citas, datos];
+    
     // agregar el nuevo state
     this.setState({
       citas: citas
     })
+    console.log(citas);
+    console.log(this.state.citas);
+    localStorage.setItem('citas', (this.state.citas));
   }
 
   eliminarCita = id => {
     const citasActuales = [...this.state.citas];
 
-    const citas = citasActuales.filter(cita => cita.id != id);
+    const citas = citasActuales.filter(cita => cita.id !== id);
 
     this.setState({
       citas: citas
